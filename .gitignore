@@ -30,6 +30,8 @@ node_modules/
 output/
 output.tar.gz
 
+www/static/
+
 app/
 
 runtime/
