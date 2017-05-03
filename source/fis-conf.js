@@ -69,12 +69,6 @@ fis.match('::package', {
 
 fis.media('prod').match('/{static,node_modules}/**.js',{
     packTo:'/static/pkg/common.js'
-}).match('/{static,node_modules}/**.{css,less}',{
-    packTo:'/static/pkg/all.css'
-}).match('/static/css/style.less',{
-    packOrder:99
-}).match('/node_modules/element-ui/lib/theme-default/index.css',{
-    packOrder:99
 })
 
 fis.unhook('components')

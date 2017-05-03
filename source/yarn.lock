@@ -859,6 +859,10 @@ fis-parser-babel-6.x@^6.20.0:
     babel-preset-react "^6.16.0"
     babel-preset-stage-3 "6.17.0"
 
+fis3-hook-npm3@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/fis3-hook-npm3/-/fis3-hook-npm3-1.0.8.tgz#96d2f6c689e39462c47eb00718e120fd9ef9f567"
+
 fis3-hook-npm@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/fis3-hook-npm/-/fis3-hook-npm-1.2.1.tgz#1c8534ef4998538cbb5accc0b48ea92fa9a24fe3"
@@ -1510,6 +1514,10 @@ vue-template-validator@^1.1.5:
   resolved "https://registry.yarnpkg.com/vue-template-validator/-/vue-template-validator-1.1.5.tgz#22d1ee77d0647c1ab14ff7eb01865942d9b3c458"
   dependencies:
     chalk "^1.1.1"
+
+vue2-animate@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/vue2-animate/-/vue2-animate-1.0.4.tgz#23fd1ee4ef2e25672f6a84a3363f306160f38032"
 
 vue@^2.2.6:
   version "2.2.6"
