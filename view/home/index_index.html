@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%=info.name%></title>
+    <link rel="stylesheet" type="text/css" href="/static//node_modules/bootstrap3/dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/static//node_modules/animate.css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="/static//node_modules/element-ui/lib/theme-default/index.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+    <div id='app' >
+     
+
+
+<header class="navbar navbar-default  navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="padding: 0 15px;display: none">
+          <img src="/static/images/logo_big.png" style="height: 42px;margin-top:4px" alt="" >
+      </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style='padding:0;overflow: hidden;'>
+
+        <img class="logo" src="/static/images/logo.png" alt="">
+        
+      <ul class="nav navbar-nav navbar-right">
+         <li :class='{n_active:hash == "#index"}'>
+                    <a href="#index" @click='toScroll("#index")'>首页
+                        <i>HOME</i>
+                    </a>
+                </li>
+                <li :class='{n_active:hash == "#service"}'>
+                    <a href="#service" @click='toScroll("#service")'>服务
+                        <i>SERVICE</i>
+                    </a>
+                </li>
+                <li :class='{n_active:hash == "#case"}'>
+                    <a style="color: #fff" href="#case" @click='toScroll("#case")'>案例
+                     <i>CASE</i>
+                     </a>
+                </li>
+                <li :class='{n_active:hash == "#about"}'>
+                    <a href="#about" @click='toScroll("#about")'>关于
+                         <i>ABOUT</i>
+                    </a>
+                </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</header>
+
+    <section class="carousel" id='index'>
+
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <% for(var i =0;i<banner.length;i++){ %>
+                <li data-target="#carousel-example-generic" data-slide-to="<%=i%>" class="<% if(i==0){ %>active<% } %>"></li>
+                <% } %>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <% for(var i = 0; i< banner.length; i++) { %>
+                <div class="item <% if(i == 0) { %> active <% } %>" >
+                    <img src="/static/upload/<%= banner[i].src %>" alt="<%= banner[i].remark %>">
+                </div>
+                <% } %>
+            </div>
+
+            <!-- Controls -->
+            <a style="background: none" class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="el-carousel__arrow el-carousel__arrow--left" aria-hidden="true">
+                    <i class="glyphicon glyphicon-menu-left"></i>
+                </span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a  style="background: none" class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="el-carousel__arrow el-carousel__arrow--right" aria-hidden="true">
+                       <i class="glyphicon glyphicon-menu-right"></i>
+                </span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+    <section id='service' >
+        <div class="section-title">
+            <h5 class='wow fadeInLeft'>我们能做什么?</h5>
+            <p class='wow fadeInRight'>What can we do?</p>
+
+            <div class='service-images wow fadeIn' >
+                <img src="/static/images/service_01.jpg" alt="">
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-4 " >
+                        <img class="wow fadeInUp " src="/static/images/p1.png" alt="">
+                        <h5 class="wow fadeInUp">动画</h5>
+                        <p class="wow fadeInUp">Animation</p>
+                    </div>
+                    <div class="col-xs-4">
+                        <img class="wow fadeInUp" src="/static/images/p2.png" alt="">
+                          <h5 class="wow fadeInUp">影视包装</h5>
+                        <p class="wow fadeInUp">Movie Packaging</p>
+                    </div>
+                    <div class="col-xs-4">
+                        <img class="wow fadeInUp" src="/static/images/p3.png" alt="">
+                          <h5 class="wow fadeInUp">平面设计</h5>
+                        <p class="wow fadeInUp">Graphic Designer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id='case'>
+        <div class="section-title">
+            <h5 class='wow fadeInLeft'>我们做了什么?</h5>
+            <p class='wow fadeInRight'>What have we done?</p>
+        </div>
+        <div class="container-fluid">
+                <div class="col-md-3 col-sm-3 col-xs-6" v-for='n in 14'>
+                    <img src="/static/images/case1.jpg" alt="">
+                </div>
+                <div class="col-md-6 col-sx-12">
+                 <img src="/static/images/more.jpg" alt="">
+                </div>
+        </div>
+        <div style="clear:both;"></div>
+     </section>
+    <section id='about'>
+         <div class="section-title">
+            <h5 class='wow fadeInLeft'>关于我们</h5>
+            <p class='wow fadeInRight'>About us</p>
+        </div>
+
+        <div class='bottom-img'>
+            <img src="/static/images/bottom_01.jpg" alt="">
+        </div>
+        <div class='info'>
+             <img src="/static/images/logo_big.png" alt="">
+            <div class='detail'>
+                <h5><%= info.name %></h5>
+                <ul>
+                    <li><%= info.tel %></li>
+                    <li><%= info.email %></li>
+                    <li><%= info.qq %></li>
+                    <li><%= info.email %></li>
+                    <li><%= info.address %></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    </div>
+
+<script src="/static/js/mod.js"></script>
+<script type="text/javascript" src="/static//node_modules/bootstrap3/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="/static//node_modules/jquery-scrollto/out/lib/jquery-scrollto.js"></script>
+<script type="text/javascript" src="/static//node_modules/vue/dist/vue.min.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/mixins/emitter.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/utils/merge.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/input.js"></script>
+<script type="text/javascript" src="/static//node_modules/vue/dist/vue.runtime.common.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/utils/dom.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/utils/clickoutside.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/utils/popup/popup-manager.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/utils/scrollbar-width.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/utils/popup/index.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/utils/popper.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/utils/vue-popper.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/utils/resize-event.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/utils/util.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/scrollbar.js"></script>
+<script type="text/javascript" src="/static//node_modules/throttle-debounce/throttle.js"></script>
+<script type="text/javascript" src="/static//node_modules/throttle-debounce/debounce.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/locale/lang/zh-CN.js"></script>
+<script type="text/javascript" src="/static//node_modules/deepmerge/index.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/locale/format.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/locale/index.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/mixins/locale.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/tag.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/select.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/option.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/button.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/button-group.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/transitions/collapse-transition.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/checkbox.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/utils/vdom.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/tooltip.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/checkbox-group.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/utils/date.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/util.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/rule/required.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/rule/whitespace.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/rule/type.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/rule/range.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/rule/enum.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/rule/pattern.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/rule/index.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/validator/string.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/validator/method.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/validator/number.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/validator/boolean.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/validator/regexp.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/validator/integer.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/validator/float.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/validator/array.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/validator/object.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/validator/enum.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/validator/pattern.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/validator/type.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/validator/date.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/validator/required.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/validator/index.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/messages.js"></script>
+<script type="text/javascript" src="/static//node_modules/async-validator/lib/index.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/input-number.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/progress.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/mixins/migrating.js"></script>
+<script type="text/javascript" src="/static//node_modules/babel-helper-vue-jsx-merge-props/index.js"></script>
+<script type="text/javascript" src="/static//node_modules/element-ui/lib/element-ui.common.js"></script>
+<script type="text/javascript" src="/static/js//pages/home/index.js"></script>
+<script src="/static/js/wow.js"></script>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    require('pages/home/index')
+</script>
+</body>
+</html>

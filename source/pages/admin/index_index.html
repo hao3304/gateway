@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>系统管理</title>
+    <style>
+        html,body{
+            padding:0;
+            margin:0;
+            height:100%;
+            width:100%;
+            font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif;
+            font-weight: 200;
+        }
+        #app{
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+        }
+
+        #app section {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <x-nav></x-nav>
+        <section>
+              <router-view></router-view>
+        </section>
+    </div>
+</body>
+</html>
+<script src='/static/js/mod.js'></script>
+<script>
+    require('./index')
+</script>
