@@ -1,5 +1,5 @@
 html {
-  font-size: 14px;
+  font-size: 14px !important;
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -49,6 +49,9 @@ el-carousel__arrow el-carousel__arrow--right {
   transition: .3s;
   cursor: pointer;
   outline: 0;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
 }
 header.navbar {
   transition: all .4s;

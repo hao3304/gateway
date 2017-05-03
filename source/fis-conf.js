@@ -68,8 +68,9 @@ fis.match('::package', {
 });
 
 fis.media('prod').match('/{static,node_modules}/**.js',{
-    packTo:'/static/pkg/common.js',
-    useHash:true
+    packTo:'/static/pkg/common.js'
+}).match('/{static,node_modules}/**.{css,less}',{
+    packTo:'/static/pkg/all.css'
 })
 
 fis.unhook('components')
