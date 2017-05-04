@@ -25,9 +25,9 @@
                     </el-upload>
                 </el-form-item>
                 <el-form-item label='排序'>
-                    <el-input type='number' ></el-input>
+                    <el-input type='number' v-model.number='form.sort' ></el-input>
                 </el-form-item>
-                <el-form-item label='备注'>
+                <el-form-item label='备注' v-model='form.remark'>
                     <el-input type='text'></el-input>
                 </el-form-item>
             </el-form>
@@ -91,7 +91,8 @@
         return {
             id:'',
             src:'',
-            remark:''
+            remark:'',
+            sort:0
         }
     }
 

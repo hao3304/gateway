@@ -209,14 +209,19 @@ section.carousel{
                 top:0;
                 left: 0;
                 right: 0;
+                &.bold{
+                    h4{
+                        font-weight: 400;
+                    }
+                }
                 h4{
                     text-align: center;
-                    line-height: 40px;
+                    line-height: 2rem;
                     font-weight: 200;
                 }
 
                 h5{
-                    line-height: 55px;
+                    line-height: 3rem;
                     text-align: right;
                     padding-right: 40%;
                 }
@@ -224,10 +229,11 @@ section.carousel{
             img{
                 width:50%;
                 border-radius: 50%;
-                transition:all .4s;
+                transition:all .3s;
                 cursor: pointer;
                 &:hover{
                     background-color: #fff;
+                    transform: scale(.9);
                 }
             }
 
@@ -247,7 +253,9 @@ section.carousel{
     .section-title{
         position: absolute;
         z-index: 100;
-        width:100%;
+        width: 260px;
+        margin-left: -130px;
+        left: 50%;
         text-align: center;
         color: #fff;
         text-shadow: 1px 1px 1px rbga(0,0,0,.4)
@@ -259,6 +267,59 @@ section.carousel{
             padding:0;
             img{
                 width:100%;
+            }
+
+            .media{
+                cursor: pointer;
+                position: relative;
+                &:hover{
+                    .media-hover{
+                        background-color: rgba(0,0,0,.6);
+                        p{
+                            i{
+                                opacity: 1;
+                            }
+                        }
+                        h5{
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                .media-hover{
+                    position: absolute;
+                    top:0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    transition:all .3s;
+                    background-color: rgba(0,0,0,0);
+                    p{
+                        text-align: center;
+                        position: absolute;
+                        width: 100%;
+                        top:50%;
+                        margin-top: -24px;
+                        i{
+                            font-size: 48px;
+                            opacity: 0;
+                            transition: all .3s;
+                            color: rgba(255,255,255,.8);
+                        }
+                    }
+                    h5{
+                        position: absolute;
+                        bottom:10%;
+                        width: 100%;
+                        left: 0;
+                        opacity: 0;
+                        transition: all .3s;
+                        text-align: center;
+                        font-size: 1.2rem;
+                        font-weight: 400;
+                        color: rgba(255,255,255,.8);
+                    }
+                }
             }
         }
     }
@@ -376,6 +437,20 @@ section.carousel{
       .section-title{
           h5{
               padding-top: 4rem;
+          }
+      }
+
+      .container-fluid .col-xs-4  .broadcast{
+
+
+          h4{
+              line-height: 1.2rem;
+              font-size: 1rem;
+          }
+
+          h5{
+              line-height: 1rem;
+              font-size: 1rem;
           }
       }
   }

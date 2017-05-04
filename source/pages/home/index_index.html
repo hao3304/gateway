@@ -124,23 +124,48 @@
                     <div class="col-xs-4" >
                         <transition name="fade">
                         <div v-show="pic == 'animate'|| pic == 'normal'">
-                            <img @mouseover="onHover('animate')" @mouseout="onHover()" src="/static/images/p1.png" alt="">
-                            <h5>动画</h5>
-                            <p>Animation</p>
+                            <img @click="onHover('animate')" @mouseover="onHover('animate')" @mouseout="onHover()" src="/static/images/p1.png" alt="">
+                            <h5 class="wow fadeInLeft">动画</h5>
+                            <p class="wow fadeInLeft">Animation</p>
                         </div>
                         </transition>
+                        <transition name="zoom">
+                            <div class="broadcast" v-show="pic == 'design'">
+                                <h4>视觉万物</h4>
+                                <h4>来自平面</h4>
+                            </div>
+                        </transition>
+                        <transition name="zoom">
+                        <div class="broadcast " v-show="pic == 'media'">
+                            <h4>有时候</h4>
+                            <h4>包装只是"壳"</h4>
+                            <h4>但在这儿</h4>
+                            <h4>包装是"核"</h4>
+                        </div>
+                        </transition>
+
                     </div>
                     <div class="col-xs-4">
                         <transition name="fade">
                         <div v-show="pic == 'media'|| pic == 'normal'">
-                            <img @mouseover="onHover('media')" @mouseout="onHover()"  src="/static/images/p2.png" alt="">
-                            <h5>影视包装</h5>
-                            <p>Movie Packaging</p>
+                            <img  @click="onHover('media')" @mouseover="onHover('media')" @mouseout="onHover()"  src="/static/images/p2.png" alt="">
+                            <h5 class="wow fadeIn">影视包装</h5>
+                            <p class="wow fadeIn">Movie Packaging</p>
                         </div>
-                        </transition>
-                        <transition name="fade">
-                            <div class="broadcast" v-show="pic == 'animate'">
 
+                        </transition>
+                        <transition name="zoom">
+                            <div class="broadcast bold" v-show="pic == 'design'">
+
+                                <h4>平面广告</h4>
+                                <h4>电商宣传</h4>
+                                <h4>UI设计</h4>
+                                <h4>网页设计</h4>
+                                <h4>宣传册 包装 海报</h4>
+                            </div>
+                        </transition>
+                        <transition name="zoom">
+                            <div class="broadcast bold" v-show="pic == 'animate'">
                                 <h4>产品广告</h4>
                                 <h4>科教培训</h4>
                                 <h4>建筑规划</h4>
@@ -152,18 +177,26 @@
                     <div class="col-xs-4">
                         <transition name="fade">
                         <div v-show="pic == 'design'|| pic == 'normal'">
-                            <img @mouseover="onHover('design')" @mouseout="onHover()"  src="/static/images/p3.png" alt="">
-                            <h5>平面设计</h5>
-                            <p>Graphic Designer</p>
+                            <img  @click="onHover('design')" @mouseover="onHover('design')" @mouseout="onHover()"  src="/static/images/p3.png" alt="">
+                            <h5 class="wow fadeInRight">平面设计</h5>
+                            <p  class="wow fadeInRight">Graphic Designer</p>
                         </div>
                         </transition>
-                        <transition name="fade">
+                        <transition name="zoom">
                             <div class="broadcast" v-show="pic == 'animate'">
 
                                 <h5>Anima--灵魂</h5>
                                 <h5>Animate--赋予生命</h5>
                                 <h5>Animation--我们正在做的事</h5>
                             </div>
+                        </transition>
+                        <transition name="zoom">
+                        <div class="broadcast " v-show="pic == 'media'">
+                            <h4>栏目包装</h4>
+                            <h4>影视片头</h4>
+                            <h4>后期合成</h4>
+                            <h4>配音剪辑</h4>
+                        </div>
                         </transition>
                     </div>
                 </div>
@@ -176,11 +209,23 @@
             <p class='wow fadeInRight'>What have we done?</p>
         </div>
         <div class="container-fluid">
-                <div class="col-md-3 col-sm-3 col-xs-6" v-for='n in 14'>
-                    <img src="/static/images/case1.jpg" alt="">
+                <% for(var i=0;i< media.length;i++ ) {%>
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="media">
+                        <img src="/static/upload/<%= media[i].cover %>" alt="">
+                        <div class="media-hover">
+                            <p>
+                               <i class="glyphicon glyphicon-play-circle"></i>
+                            </p>
+                            <h5><%= media[i].name %></h5>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 col-sx-12">
-                 <img src="/static/images/more.jpg" alt="">
+                <% } %>
+                <div class="col-sm-6 col-md-6 col-sx-12">
+                    <a href="#">
+                        <img src="/static/images/more.jpg" alt="">
+                    </a>
                 </div>
         </div>
         <div style="clear:both;"></div>

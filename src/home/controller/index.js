@@ -13,9 +13,11 @@ export default class extends Base {
     let system_model = this.model('system');
     let info = await system_model.where({id:0}).find();
     let banner = await this.model('banner').select();
+    let media = await this.model('media').select();
     this.assign({
       info:info,
-        banner:banner
+        banner:banner,
+        media:media
     })
     return this.display();
   }
